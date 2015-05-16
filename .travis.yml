@@ -1,15 +1,18 @@
 language: ruby
 rvm:
-  - 2.2.1
+- 2.2.1
 env:
+  matrix:
   - DB=sqlite
   - DB=mysql
   - DB=postgresql
+  global:
+    secure: YEIoKJ54/H+6NGvbaubnIss8lxoi0p8vv6juGA8CwQX4SPeeHWgwxVM/TyqosxZGdbk4xe81BlPVer2SBDjwG29Ger1E5LOfrCXd9wcIczSvsIqizsYoXSmtOehsGtyiD5Bnas+XTydLD+ZqPysJQuw7ATc36pkssU9tnMHPwS9cDu3n6y2e2Cy4IPrcQIp/cacwNe4XMrDXnX5Fl92sPChROjd8HZZlSSqrOY/lP9ajZlmdpvpfMwumLjrUHgfQAnZtm43JS/xCUqCdewB77V+Lz+ZC0DEufhvuj7A0DHX8bUiwCLc92J7kLLlx/97jejDHPwxhYA4fgWkbV4eRViCA1d/0fUZR1ej20o00xuUc6pW6eepa3k6/fhKMgNoLOEPM/UhTp6kfO5LS3aK5gzjLOsmH7LOfdUgIF3XvTZxNl0tMB7Aa2L/eNJzqPCIMU1ULmulc5CVIjjHI99lWIJB+A++WCd3Bp47cBcgPAy0eMZo5xh+JVuQjMysgnho9qxmN+E53M5haOrp6psAITqSQL6g+AQlnpCGpWIYrASGFMGepGEw/h03xWGNoBnkFzPaeHKYdtTOsy8pYy2yEuofrxtJ616XxkGnkhn/LxYZB/Meo7aUKXrkI1K2rheneg3zVqBc5BgVjm2kV5zTtwwcWcNe6+j7Bx5xi+7S4M0k=
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rake
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rake
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - mysql -e 'create database ep_test'
-  - psql -c 'create database ep_test' -U postgres
+- cp config/database.travis.yml config/database.yml
+- mysql -e 'create database ep_test'
+- psql -c 'create database ep_test' -U postgres
