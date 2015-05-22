@@ -15,3 +15,6 @@ before_script:
     - cp config/database.travis.yml config/database.yml
     - mysql -e 'create database ep_test'
     - psql -c 'create database ep_test' -U postgres
+
+install:
+    - bundle install
