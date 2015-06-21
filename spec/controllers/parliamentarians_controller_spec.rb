@@ -2,11 +2,6 @@ require 'rails_helper'
 
 RSpec.describe ParliamentariansController, :type => :controller do
 
-   def update
-      ParliamentariansController
-    end
-  end
-
   describe "GET index" do
     it "assigns parliamentarians to equals Parliamentarian.search" do
       get :index, {}
