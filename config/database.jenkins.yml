@@ -12,10 +12,9 @@ default: &default
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "sqlite3" %>
 
 development:
-  <<: *defaults
+  <<: *default
 
 test:
-  <<: *defaults
+  <<: *default
