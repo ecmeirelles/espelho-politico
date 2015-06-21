@@ -54,7 +54,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'database_cleaner', '~> 1.4.1'
+  gem 'database_cleaner'
 end
 
 # Gem Simplecov
