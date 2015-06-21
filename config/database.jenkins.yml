@@ -12,7 +12,7 @@ default: &default
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
+  <<: *<%= ENV['DB'] || "sqlite3" %>
 
 development:
   <<: *defaults
