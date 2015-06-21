@@ -53,10 +53,6 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
 end
 
-group :test do
-  gem 'database_cleaner'
-end
-
 # Gem Simplecov
 group :coverage do
   gem 'simplecov', :require => false
