@@ -10,5 +10,4 @@ script:
     - bundle exec rspec
 before_script:
     - bundle update
-    - cp config/database.template.yml config/database.yml
     - mysql -e 'create database ep_test'
