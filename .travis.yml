@@ -10,5 +10,5 @@ script:
     - bundle exec rspec
 before_script:
     - bundle update
-    - cp config/database.travis.yml config/database.yml
+    - cp config/database.template.yml config/database.yml
     - mysql -e 'create database ep_test'
